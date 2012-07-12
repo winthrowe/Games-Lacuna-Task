@@ -117,7 +117,7 @@ sub process_planet {
             sort { $planet_stats->{$a.'_hour'} cmp $planet_stats->{$b.'_hour'} } @Games::Lacuna::Task::Constants::RESOURCES;
         my $min_production = min map { $planet_stats->{$_.'_hour'} } @production;
         foreach my $element (@Games::Lacuna::Task::Constants::RESOURCES) {
-            my $limit_production = $planet_stats->{$element.'_hour'} * 0.8;
+            my $limit_production = $planet_stats->{$element.'_hour'} * 0.5;
             next
                 if $limit_production > $min_production;
             push(@upgradeable_buildings,$self->find_upgrade_buildings($planet_stats,$element,'production'));
