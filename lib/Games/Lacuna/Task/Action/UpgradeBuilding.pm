@@ -127,7 +127,7 @@ sub process_planet {
     }
     
     # Find any other upgradeable building
-    for my $tag (qw(storage global extra)) {
+    for my $tag (qw(global storage happy extra)) {
         last
             if (scalar @upgradeable_buildings > 0);
         @upgradeable_buildings = $self->find_upgrade_buildings($planet_stats,$tag);
