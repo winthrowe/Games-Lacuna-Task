@@ -102,7 +102,7 @@ sub process_planet {
     
     # Check if storage is overflowing
     if (scalar @upgradeable_buildings == 0) {
-        foreach my $element (qw(waste ore water food energy)) {
+        foreach my $element (qw(waste)) {
             my $available_storage = $planet_stats->{$element.'_capacity'};
             my $free_storage = $available_storage-$planet_stats->{$element.'_stored'};
             if (($free_storage / $available_storage) < 0.01) {
